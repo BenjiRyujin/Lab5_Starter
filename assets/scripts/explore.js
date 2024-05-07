@@ -31,6 +31,17 @@ function init() {
       const text = textToSpeakInput.value;
       const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
       const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.Name === selectedVoiceName);
+
+      if (text && selectedVoice){
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.voice = selectedVoice;
+        window.speechSynthesis.speak(utterance);
+
+        imageFace.src = 'assets/images/open-mouth.png';
+        utterance.onend = function() {
+          imageFace.src = 'assets/images/smiling.png';
+        };
+      }
     });
   }
 
