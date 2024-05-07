@@ -9,9 +9,9 @@ function init() {
   const imageFace = document.querySelector('img');
 
   function populateVoiceList(){
-
-    /*
     const voices = window.speechSynthesis.getVoices();
+
+    /*    
     console.log(voices);
     for (let i=0; i<voices.length; i++){
       const pick = document.createElement('option');
@@ -27,6 +27,11 @@ function init() {
       voiceSelect.appendChild(option);
     });
     
+    buttonSpeak.addEventListener('click', function(){
+      const text = textToSpeakInput.value;
+      const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
+      const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.Name === selectedVoiceName);
+    });
   }
 
   populateVoiceList();
