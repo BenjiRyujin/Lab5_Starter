@@ -39,40 +39,10 @@ function init() {
       }
     }
   synth.speak(utterThis);
-
+  imageFace.src = 'assets/images/smiling-open.png';
+  utterThis.onend=function(){
+    imageFace.src = 'assets/images/smiling.png';
+  };
   });
-
-  /*
-  function populateVoiceList(){
-    const voices = window.speechSynthesis.getVoices();
-    
-    voices.forEach(voice => {
-      const option = document.createElement('option');
-      option.textContent = voice.name;
-      option.setAttribute('data-lang', voice.lang);
-      option.setAttribute('data-name', voice.name);
-      voiceSelect.appendChild(option);
-    });
-  }
-  */
-    
-  /*
-  buttonSpeak.addEventListener('click', function(){
-    const text = textToSpeakInput.value;
-    const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
-    const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.name === selectedVoiceName);
-
-    if (text && selectedVoice){
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.voice = selectedVoice;
-      window.speechSynthesis.speak(utterance);
-
-      imageFace.src = 'assets/images/open-mouth.png';
-      utterance.onend = function() {
-        imageFace.src = 'assets/images/smiling.png';
-      };
-    }
-  });
-  */
 }
 
