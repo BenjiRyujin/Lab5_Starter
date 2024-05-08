@@ -30,7 +30,7 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
-  
+
 
   /*
   function populateVoiceList(){
@@ -46,7 +46,7 @@ function init() {
   }
   */
     
-  /*
+  
   buttonSpeak.addEventListener('click', function(){
     const text = textToSpeakInput.value;
     const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
@@ -63,7 +63,5 @@ function init() {
       };
     }
   });
-  populateVoiceList();
-  */
 }
 
