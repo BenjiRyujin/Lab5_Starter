@@ -31,7 +31,7 @@ function init() {
   }
 
   buttonSpeak.addEventListener('click', function(){
-    const utterThis = SpeechSynthesisUtterance(textToSpeakInput.value);
+    const utterThis = new SpeechSynthesisUtterance(textToSpeakInput.value);
     const selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
     for (let i=0; i<voices.length; i++){
       if (voices[i].name === selectedOption){
@@ -39,7 +39,7 @@ function init() {
       }
     }
   synth.speak(utterThis);
-  
+
   });
 
   /*
