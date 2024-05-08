@@ -64,6 +64,17 @@ test('invalid date',()=>{
   expect(isDate('5/17/02')).toBe(false);
 });
 
-// 
-
+//  Testing isHexColor
+test('valid HexColor', ()=>{
+  expect(isHexColor('#FFFFFF')).toBe(true);
+});
+test('valid HexColor', ()=>{
+  expect(isHexColor('#111')).toBe(true);
+});
+test('invalid HexColor', ()=>{
+  expect(isHexColor('#FFFFFFF')).toBe(false);
+});
+test('invalid HexColor', ()=>{
+  expect(isHexColor('#11')).toBe(false);
+});
 
