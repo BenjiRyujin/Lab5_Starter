@@ -43,7 +43,8 @@ function init() {
         };
       }
     });
+    populateVoiceList();
+
   }
 
-  populateVoiceList();
 }
