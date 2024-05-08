@@ -30,7 +30,17 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
-
+  buttonSpeak.addEventListener('click', function(){
+    const utterThis = SpeechSynthesisUtterance(textToSpeakInput.value);
+    const selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
+    for (let i=0; i<voices.length; i++){
+      if (voices[i].name === selectedOption){
+        utterThis.voice = voices[i];
+      }
+    }
+  synth.speak(utterThis);
+  
+  });
 
   /*
   function populateVoiceList(){
@@ -46,7 +56,7 @@ function init() {
   }
   */
     
-  
+  /*
   buttonSpeak.addEventListener('click', function(){
     const text = textToSpeakInput.value;
     const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
@@ -63,5 +73,6 @@ function init() {
       };
     }
   });
+  */
 }
 
