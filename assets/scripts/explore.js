@@ -26,6 +26,7 @@ function init() {
       option.setAttribute('data-name', voice.name);
       voiceSelect.appendChild(option);
     });
+  }
     
     buttonSpeak.addEventListener('click', function(){
       const text = textToSpeakInput.value;
@@ -44,7 +45,5 @@ function init() {
       }
     });
     populateVoiceList();
-
   }
 
-}
