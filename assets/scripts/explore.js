@@ -10,14 +10,6 @@ function init() {
 
   function populateVoiceList(){
     const voices = window.speechSynthesis.getVoices();
-
-    /*    
-    console.log(voices);
-    for (let i=0; i<voices.length; i++){
-      const pick = document.createElement('option');
-      //pick.textContent = '${voices[i].name}(${voices[i].lang})';
-    }
-    */
     
     voices.forEach(voice => {
       const option = document.createElement('option');
@@ -31,7 +23,7 @@ function init() {
     buttonSpeak.addEventListener('click', function(){
       const text = textToSpeakInput.value;
       const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
-      const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.Name === selectedVoiceName);
+      const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.name === selectedVoiceName);
 
       if (text && selectedVoice){
         const utterance = new SpeechSynthesisUtterance(text);
